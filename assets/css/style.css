@@ -26,7 +26,7 @@
 
 /* Base */
 html {
-  font-size: 18px;
+  font-size: 17px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -34,7 +34,7 @@ body {
   font-family: 'Newsreader', Georgia, "Times New Roman", serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.68;
   transition: background 0.2s, color 0.2s;
 }
 
@@ -42,18 +42,18 @@ body {
   width: 100%;
   max-width: min(92vw, 760px);
   margin: 0 auto;
-  padding: 2.5rem 1.25rem;
+  padding: 2rem 1.5rem;
 }
 
 @media (min-width: 850px) {
   .container {
-    max-width: clamp(680px, 72vw, 880px);
+    max-width: clamp(720px, 72vw, 860px);
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: clamp(760px, 62vw, 980px);
+    max-width: clamp(780px, 64vw, 940px);
   }
 }
 
@@ -64,15 +64,16 @@ a {
 
 a:hover {
   text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 /* Header */
 .site-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 4rem;
-  padding-bottom: 1.5rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--border);
 }
 
@@ -156,14 +157,14 @@ a:hover {
 
 /* Single Post */
 .post-header {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.25rem;
 }
 
 .post-header h1 {
-  font-size: clamp(2.8rem, 7vw, 3.8rem);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
   font-weight: 600;
-  line-height: 1.08;
-  margin-bottom: 0.35em;
+  line-height: 1.15;
+  margin-bottom: 0.4em;
   text-wrap: balance;
 }
 
@@ -173,25 +174,25 @@ a:hover {
 }
 
 .post-content {
-  font-size: 1.125rem;
-  line-height: 1.6;
+  font-size: 1.0625rem;
+  line-height: 1.68;
   text-wrap: pretty;
 }
 
 .post-content p {
-  margin-bottom: 1.15em;
+  margin-bottom: 1.2em;
 }
 
 .post-content h2, .post-content h3 {
-  margin-top: 2.25em;
-  margin-bottom: 0.65em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.25;
   text-wrap: balance;
 }
 
-.post-content h2 { font-size: 1.6em; }
-.post-content h3 { font-size: 1.2em; }
+.post-content h2 { font-size: 1.45em; }
+.post-content h3 { font-size: 1.15em; }
 
 .post-content ul, .post-content ol {
   margin-bottom: 1.5rem;
@@ -260,7 +261,7 @@ a:hover {
 
 /* Figures */
 .post-content figure {
-  margin: 3.5rem 0;
+  margin: 2.25rem 0;
   text-align: center;
 }
 
@@ -271,9 +272,9 @@ a:hover {
 
 .post-content figcaption {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-style: normal;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   line-height: 1.5;
 }
 
@@ -281,20 +282,6 @@ a:hover {
   margin: 2rem 0;
   overflow-x: auto;
   overflow-y: hidden;
-}
-
-@media (min-width: 850px) {
-  .post-content figure {
-    width: 112%;
-    margin-left: -6%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .post-content figure {
-    width: 114%;
-    margin-left: -7%;
-  }
 }
 
 /* Tables — booktabs style */
@@ -344,6 +331,8 @@ a:hover {
 
 /* Videos */
 .post-content video {
+  width: 100%;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
@@ -367,6 +356,8 @@ a:hover {
 
 .post-content a {
   text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
 }
 
 /* Footer */
@@ -394,9 +385,9 @@ a:hover {
 @media (max-width: 600px) {
   html { font-size: 16px; }
   .container { padding: 1.5rem 1rem; }
-  .site-header { margin-bottom: 2.5rem; }
-  .post-header { margin-bottom: 2.5rem; }
-  .post-header h1 { font-size: 2.35rem; }
-  .post-content { font-size: 1.05rem; }
-  .post-content figure { margin: 2.5rem 0; }
+  .site-header { margin-bottom: 2rem; }
+  .post-header { margin-bottom: 1.75rem; }
+  .post-header h1 { font-size: 1.9rem; }
+  .post-content { font-size: 1rem; }
+  .post-content figure { margin: 1.75rem 0; }
 }

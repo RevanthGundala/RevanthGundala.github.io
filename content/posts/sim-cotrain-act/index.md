@@ -5,6 +5,7 @@ date: 2026-11-12T10:00:00.000Z
 description: "Generating 1,000 stitched demonstrations in MuJoCo and measuring across six seeds whether co-training improves a real ACT policy."
 ---
 
+*Code: [omx-act-recap](https://github.com/RevanthGundala/omx-act-recap) (policy & evaluation) · [omx-training](https://github.com/RevanthGundala/omx-training) (robot control)*
 
 Collecting new teleoperated demonstrations on a physical robot is slow. After [testing DAgger corrections](/posts/act-blog/) on a low-cost arm, I wanted to see whether demonstrations generated in a simulator could improve an ACT policy instead.
 
