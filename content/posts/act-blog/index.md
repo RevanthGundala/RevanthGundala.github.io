@@ -51,9 +51,10 @@ For a second round of DAgger, I collected 12 more on-policy corrections focused 
 
 ### Results
 
+<div class="media-row">
 {{< svgfig src="results-chart.svg" caption="Live success on 30 matched placements across the base model and two rounds of DAgger (with 95% Wilson intervals)." >}}
-
 {{< svgfig src="per-layout.svg" caption="Successes out of 6 trials for each layout. Each row shows the base policy, DAgger round 1 and DAgger round 2, and the label under the layout name is how many round-two corrections that layout received." >}}
+</div>
 
 The layouts that received the most corrections improved most, while layouts with few or no corrections got worse.
 

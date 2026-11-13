@@ -16,9 +16,10 @@ Collecting new teleoperated demonstrations on a physical robot is slow. After [t
 
 In an earlier experiment, the robot picked up a soft sponge and placed it on a fixed trivet. Simulating a deformable sponge in MuJoCo was difficult: rigid CAD approximations couldn't match foam compliance, and Gaussian splat scans lacked clean contact boundaries. If a co-trained policy failed, I wouldn't know whether the method failed or the soft-body model did.
 
+<div class="media-row">
 {{< img src="sponge-splat.jpg" alt="Gaussian splat scan attempt of the sponge showing top, side, and texture projections" caption="A Gaussian splat scan attempt of the sponge. While it captured the curled surface and texture, missing underside geometry made it unusable for contact simulation." >}}
-
 {{< img src="sponge-3d-model.jpg" alt="3D model views of the sponge design iterations" caption="Attempting to model the sponge contour and profile across multiple CAD iterations." >}}
+</div>
 
 {{< video src="sponge-sim-fail.mp4" poster="sponge-sim-fail.jpg" caption="Replaying a real demonstration in MuJoCo with the modeled sponge (left: real top camera; right: simulation). Rigid collision approximations caused the fingers to push or slip off the sponge rather than pinching it." >}}
 
@@ -41,9 +42,10 @@ After lens calibration, I aligned camera positions: the overhead camera was anch
 
 Real motor encoders don't read zero at exact physical zero, and motors lag under load rather than snapping to commanded angles instantly. I calibrated the joint zero offsets by touching known points on the table, and tuned the simulated motor stiffness and damping with [CMA-ES](https://en.wikipedia.org/wiki/CMA-ES) directly against recorded teleop logs so the simulated arm tracked commands with realistic lag.
 
+<div class="media-row">
 {{< img src="arm-pose-calibration.jpg" alt="Physical robot arm clamped to the workbench with ruler measurements calibrating table-to-pivot height and mounting plate thickness" caption="Calibrating physical arm geometry and table offset: measuring base mounting plate thickness and table-to-shoulder pivot distance before aligning joint zeroes." >}}
-
 {{< img src="setup-real-vs-sim.jpg" alt="Side-by-side comparison of real episode 12 at 5.00s versus simulated episode 12 for both top and wrist cameras" caption="Matched episode 12 at 5.00s in hardware (left) and follower-driven MuJoCo replay (right) across both top and wrist cameras." >}}
+</div>
 
 
 ## Generating 1,000 simulated episodes
@@ -92,9 +94,10 @@ Seed 1002 went the other way: while its baseline reached 9/20, the co-trained po
 
 Offline losses gave no warning: Seed 1002 had lower error than successful runs during both training and validation, yet collapsed live on nearby placements. With a small batch size of 8 and a 50/50 mix, training drew only 80,000 simulated samples—leaving over 75% of the simulated frames unsampled and making individual checkpoints noisy.
 
+<div class="media-row">
 {{< svgfig src="seed-loss-curves.svg" caption="Training error on real frames alongside held-out validation loss across seeds. Seed 1002 (orange) had the lowest offline error across both metrics, despite collapsing on the physical robot." >}}
-
 {{< svgfig src="seed1002-diagnosis.svg" caption="Seed 1002 live scores split into far (orange) and near (blue) placements alongside each session's real-only baseline." >}}
+</div>
 
 Averaging the weights across the last four checkpoints smoothed out the step-to-step noise and fixed the near scenes immediately without any new training (jumping from 1/11 to 7/11). But far placements stayed stuck until I trained with a 90% simulation mix at a larger batch size.
 
