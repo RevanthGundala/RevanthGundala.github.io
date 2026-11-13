@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 390" width="100%" role="img" aria-label="Simulator success on 100 synthetic scenes versus real-robot success on 20 held-out scenes across six co-trained checkpoints, showing frequent rank inversions">
+  <style>
+    .t { font-family: inherit; fill: var(--text); font-size: 16px; }
+    .m { font-family: inherit; fill: var(--text-muted); font-size: 13.5px; }
+    .grid { stroke: var(--border); stroke-width: 1; }
+    .link { stroke: var(--border); stroke-width: 2.5; }
+    .inv { stroke: #d97757; stroke-width: 2.5; stroke-dasharray: 4 3; }
+    .sim { fill: var(--bg); stroke: var(--text-muted); stroke-width: 2.5; }
+    .real { fill: var(--accent); stroke: var(--bg); stroke-width: 2.5; }
+    .vsim { font-family: inherit; fill: var(--text-muted); font-size: 13px; }
+    .vreal { font-family: inherit; fill: var(--text); font-size: 13.5px; font-weight: 600; }
+  </style>
+
+  <!-- legend -->
+  <circle class="sim" cx="236" cy="20" r="7"/>
+  <text class="m" x="250" y="25">Simulator (100 scenes)</text>
+  <circle class="real" cx="430" cy="20" r="7.5"/>
+  <text class="m" x="444" y="25">Real robot (20 scenes)</text>
+
+  <!-- axis: x(p) = 230 + 4.8 * p -->
+  <g class="grid">
+    <line x1="230" y1="44" x2="230" y2="346"/>
+    <line x1="350" y1="44" x2="350" y2="346"/>
+    <line x1="470" y1="44" x2="470" y2="346"/>
+    <line x1="590" y1="44" x2="590" y2="346"/>
+    <line x1="710" y1="44" x2="710" y2="346"/>
+  </g>
+  <g class="m" text-anchor="middle">
+    <text x="230" y="370">0%</text>
+    <text x="350" y="370">25%</text>
+    <text x="470" y="370">50%</text>
+    <text x="590" y="370">75%</text>
+    <text x="710" y="370">100%</text>
+  </g>
+
+  <!-- Row 1: 250 demos, Seed 1: sim 80% (614), real 70% (566) -->
+  <text class="t" x="0" y="72">250 demos, Seed 1</text>
+  <text class="m" x="0" y="91">50% sim mix</text>
+  <line class="link" x1="566" y1="78" x2="614" y2="78"/>
+  <circle class="real" cx="566" cy="78" r="8"/>
+  <circle class="sim" cx="614" cy="78" r="7.5"/>
+  <text class="vreal" x="553" y="83" text-anchor="end">70%</text>
+  <text class="vsim" x="627" y="83">80%</text>
+
+  <!-- Row 2: 250 demos, Seed 2: sim 85% (638), real 40% (422) -->
+  <text class="t" x="0" y="122">250 demos, Seed 2</text>
+  <text class="m" x="0" y="141">50% sim mix</text>
+  <line class="inv" x1="422" y1="128" x2="638" y2="128"/>
+  <circle class="real" cx="422" cy="128" r="8"/>
+  <circle class="sim" cx="638" cy="128" r="7.5"/>
+  <text class="vreal" x="409" y="133" text-anchor="end">40%</text>
+  <text class="vsim" x="651" y="133">85%</text>
+
+  <!-- Row 3: 1,000 demos, Seed 1: sim 77% (599.6), real 80% (614) -->
+  <text class="t" x="0" y="172">1,000 demos, Seed 1</text>
+  <text class="m" x="0" y="191">50% sim mix</text>
+  <line class="link" x1="599.6" y1="178" x2="614" y2="178"/>
+  <circle class="sim" cx="599.6" cy="178" r="7.5"/>
+  <circle class="real" cx="614" cy="178" r="8"/>
+  <text class="vsim" x="587" y="183" text-anchor="end">77%</text>
+  <text class="vreal" x="627" y="183">80%</text>
+
+  <!-- Row 4: 1,000 demos, Seed 2: sim 62% (527.6), real 35% (398) -->
+  <text class="t" x="0" y="222">1,000 demos, Seed 2</text>
+  <text class="m" x="0" y="241">50% sim mix</text>
+  <line class="inv" x1="398" y1="228" x2="527.6" y2="228"/>
+  <circle class="real" cx="398" cy="228" r="8"/>
+  <circle class="sim" cx="527.6" cy="228" r="7.5"/>
+  <text class="vreal" x="385" y="233" text-anchor="end">35%</text>
+  <text class="vsim" x="540" y="233">62%</text>
+
+  <!-- Row 5: 1,000 demos, Seed 3: sim 49% (465.2), real 65% (542) -->
+  <text class="t" x="0" y="272">1,000 demos, Seed 3</text>
+  <text class="m" x="0" y="291">50% sim mix</text>
+  <line class="link" x1="465.2" y1="278" x2="542" y2="278"/>
+  <circle class="sim" cx="465.2" cy="278" r="7.5"/>
+  <circle class="real" cx="542" cy="278" r="8"/>
+  <text class="vsim" x="453" y="283" text-anchor="end">49%</text>
+  <text class="vreal" x="555" y="283">65%</text>
+
+  <!-- Row 6: 1,000 demos, Seed 2 (90% sim): sim 94% (681.2), real 60% (518) -->
+  <text class="t" x="0" y="322">1,000 demos, Seed 2</text>
+  <text class="m" x="0" y="341">90% sim mix, batch 32</text>
+  <line class="inv" x1="518" y1="328" x2="681.2" y2="328"/>
+  <circle class="real" cx="518" cy="328" r="8"/>
+  <circle class="sim" cx="681.2" cy="328" r="7.5"/>
+  <text class="vreal" x="505" y="333" text-anchor="end">60%</text>
+  <text class="vsim" x="694" y="333">94%</text>
+</svg>

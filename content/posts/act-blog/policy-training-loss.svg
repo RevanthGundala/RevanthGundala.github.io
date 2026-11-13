@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 365" width="100%" role="img" aria-label="Fine-tuning training loss curve comparing 7 corrections against 4 autonomous plus 3 corrections across 10,000 steps">
+  <style>
+    .t { font-family: inherit; fill: var(--text); font-size: 15px; }
+    .m { font-family: inherit; fill: var(--text-muted); font-size: 13px; }
+    .grid { stroke: var(--border); stroke-width: 1; }
+    .axis { stroke: var(--border); stroke-width: 1.5; }
+    .line-green { stroke: var(--accent); stroke-width: 2.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .dot-green { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+    .line-red { stroke: #d97757; stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .dot-red { fill: #d97757; stroke: var(--bg); stroke-width: 2; }
+    .annot { stroke: var(--text-muted); stroke-width: 1.2; marker-end: url(#arr); fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <!-- Legend -->
+  <g transform="translate(430, 20)">
+    <line x1="0" y1="0" x2="24" y2="0" stroke="var(--accent)" stroke-width="2.8"/>
+    <circle cx="12" cy="0" r="4.5" fill="var(--accent)"/>
+    <text class="m" x="32" y="4">7 corrections</text>
+
+    <line x1="0" y1="22" x2="24" y2="22" stroke="#d97757" stroke-width="2.4"/>
+    <circle cx="12" cy="22" r="4" fill="#d97757"/>
+    <text class="m" x="32" y="26">4 autonomous + 3 corrections</text>
+  </g>
+
+  <!-- Horizontal Grid lines & Y-axis labels -->
+  <g class="grid">
+    <line x1="90" y1="300.0" x2="710" y2="300.0"/>
+    <line x1="90" y1="268.1" x2="710" y2="268.1"/>
+    <line x1="90" y1="236.3" x2="710" y2="236.3"/>
+    <line x1="90" y1="204.4" x2="710" y2="204.4"/>
+    <line x1="90" y1="172.5" x2="710" y2="172.5"/>
+    <line x1="90" y1="140.6" x2="710" y2="140.6"/>
+    <line x1="90" y1="108.8" x2="710" y2="108.8"/>
+    <line x1="90" y1="76.9" x2="710" y2="76.9"/>
+    <line x1="90" y1="45.0" x2="710" y2="45.0"/>
+  </g>
+
+  <!-- Vertical Grid lines & X-axis labels -->
+  <g class="grid">
+    <line x1="90.0" y1="45" x2="90.0" y2="300"/>
+    <line x1="214.0" y1="45" x2="214.0" y2="300"/>
+    <line x1="338.0" y1="45" x2="338.0" y2="300"/>
+    <line x1="462.0" y1="45" x2="462.0" y2="300"/>
+    <line x1="586.0" y1="45" x2="586.0" y2="300"/>
+    <line x1="710.0" y1="45" x2="710.0" y2="300"/>
+  </g>
+
+  <!-- Axes -->
+  <line class="axis" x1="90" y1="45" x2="90" y2="300"/>
+  <line class="axis" x1="90" y1="300" x2="710" y2="300"/>
+
+  <!-- Y-axis text labels -->
+  <g class="m" text-anchor="end">
+    <text x="80" y="304.0">0.035</text>
+    <text x="80" y="272.1">0.040</text>
+    <text x="80" y="240.3">0.045</text>
+    <text x="80" y="208.4">0.050</text>
+    <text x="80" y="176.5">0.055</text>
+    <text x="80" y="144.6">0.060</text>
+    <text x="80" y="112.8">0.065</text>
+    <text x="80" y="80.9">0.070</text>
+    <text x="80" y="49.0">0.075</text>
+  </g>
+  <text class="m" transform="rotate(-90)" x="-175" y="28" text-anchor="middle">Training loss</text>
+
+  <!-- X-axis text labels -->
+  <g class="m" text-anchor="middle">
+    <text x="90.0" y="324">0</text>
+    <text x="214.0" y="324">2000</text>
+    <text x="338.0" y="324">4000</text>
+    <text x="462.0" y="324">6000</text>
+    <text x="586.0" y="324">8000</text>
+    <text x="710.0" y="324">10000</text>
+    <text x="400.0" y="348" class="t">Fine-tuning step</text>
+  </g>
+
+  <!-- Lines -->
+  <path class="line-red" d="M 90.0 166.1 L 214.0 242.6 L 462.0 147.0 L 586.0 236.3 L 703.8 178.9"/>
+  <path class="line-green" d="M 90.0 64.1 L 214.0 198.0 L 462.0 249.0 L 586.0 268.1 L 679.0 210.8"/>
+
+  <!-- Dots for red line -->
+  <circle class="dot-red" cx="90.0" cy="166.1" r="5"/>
+  <circle class="dot-red" cx="214.0" cy="242.6" r="5"/>
+  <circle class="dot-red" cx="462.0" cy="147.0" r="5"/>
+  <circle class="dot-red" cx="586.0" cy="236.3" r="5"/>
+  <circle class="dot-red" cx="703.8" cy="178.9" r="5"/>
+
+  <!-- Dots for green line -->
+  <circle class="dot-green" cx="90.0" cy="64.1" r="5.5"/>
+  <circle class="dot-green" cx="214.0" cy="198.0" r="5.5"/>
+  <circle class="dot-green" cx="462.0" cy="249.0" r="5.5"/>
+  <circle class="dot-green" cx="586.0" cy="268.1" r="5.5"/>
+  <circle class="dot-green" cx="679.0" cy="210.8" r="5.5"/>
+  <circle cx="586.0" cy="268.1" r="10" fill="none" stroke="var(--text)" stroke-width="2"/>
+  <path class="annot" d="M 556.0 303.1 L 578.0 280.1"/>
+  <text class="m" x="551.0" y="313.1" text-anchor="end">evaluated checkpoint</text>
+</svg>

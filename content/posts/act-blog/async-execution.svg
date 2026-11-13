@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" width="100%" role="img" aria-label="Asynchronous execution timeline showing background model inference running at 10 Hz while robot hardware executes at 30 Hz without pauses">
+  <style>
+    .t { font-family: inherit; fill: var(--text); font-size: 15px; font-weight: 600; }
+    .m { font-family: inherit; fill: var(--text-muted); font-size: 13px; }
+    .s { font-family: inherit; fill: var(--text); font-size: 13px; }
+    .box-model { fill: var(--accent-light); stroke: var(--accent); stroke-width: 1.5; rx: 6px; }
+    .box-robot { fill: var(--border); stroke: var(--text-muted); stroke-width: 1.5; rx: 6px; }
+    .blend { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 4 3; }
+    .arrow { stroke: var(--accent); stroke-width: 2; marker-end: url(#arr); fill: none; }
+  </style>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <!-- Track 1: Model Planning -->
+  <text class="t" x="20" y="45">Model (Background, ~10 Hz)</text>
+  <text class="m" x="20" y="65">Predicts 30-action chunk in ~100 ms</text>
+
+  <!-- Model boxes -->
+  <g transform="translate(260, 25)">
+    <rect class="box-model" x="0" y="0" width="140" height="42"/>
+    <text class="s" x="70" y="26" text-anchor="middle" font-weight="600">Predict Chunk 1</text>
+
+    <rect class="box-model" x="160" y="0" width="140" height="42"/>
+    <text class="s" x="230" y="26" text-anchor="middle" font-weight="600">Predict Chunk 2</text>
+
+    <rect class="box-model" x="320" y="0" width="140" height="42"/>
+    <text class="s" x="390" y="26" text-anchor="middle" font-weight="600">Predict Chunk 3</text>
+  </g>
+
+  <!-- Handoff Arrows from Model to Robot -->
+  <path class="arrow" d="M 400 70 L 420 120"/>
+  <path class="arrow" d="M 560 70 L 580 120"/>
+
+  <!-- Track 2: Robot Execution -->
+  <text class="t" x="20" y="145">Robot Arm (Hardware, 30 Hz)</text>
+  <text class="m" x="20" y="165">Continuous motion, no pauses</text>
+
+  <!-- Robot execution stream -->
+  <g transform="translate(260, 125)">
+    <!-- Chunk 1 executed -->
+    <rect class="box-robot" x="0" y="0" width="150" height="44"/>
+    <text class="s" x="75" y="27" text-anchor="middle">Execute actions (Chunk 1)</text>
+
+    <!-- Chunk 2 blended and executed -->
+    <rect class="box-robot" x="160" y="0" width="150" height="44"/>
+    <text class="s" x="235" y="27" text-anchor="middle">Blend &amp; execute (Chunk 2)</text>
+
+    <!-- Chunk 3 blended and executed -->
+    <rect class="box-robot" x="320" y="0" width="150" height="44"/>
+    <text class="s" x="395" y="27" text-anchor="middle">Blend &amp; execute (Chunk 3)</text>
+  </g>
+
+  <!-- Timeline axis -->
+  <line x1="260" y1="195" x2="730" y2="195" stroke="var(--border)" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text class="m" x="740" y="199">Time</text>
+  <text class="m" x="260" y="210">0 ms</text>
+  <text class="m" x="420" y="210">~100 ms</text>
+  <text class="m" x="580" y="210">~200 ms</text>
+</svg>

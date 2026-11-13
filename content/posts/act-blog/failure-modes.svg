@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 230" width="100%" role="img" aria-label="Outcome of each of 30 trials: base 15 successes, 12 sponge not moved, 3 nudged; DAgger round 1 19 successes, 9 not moved, 2 nudged; DAgger round 2 20 successes, 8 not moved, 2 nudged">
+  <style>
+    .t { font-family: inherit; fill: var(--text); font-size: 17px; }
+    .m { font-family: inherit; fill: var(--text-muted); font-size: 14px; }
+    .n { font-family: inherit; fill: var(--bg); font-size: 15px; font-weight: 700; text-anchor: middle; }
+    .ok { fill: var(--accent); }
+    .nm { fill: #d97757; }
+    .ng { fill: #e9b9a3; }
+    .ngt { font-family: inherit; fill: #1f1e1d; font-size: 15px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <!-- legend -->
+  <rect class="ok" x="200" y="12" width="14" height="14" rx="3"/><text class="m" x="220" y="24">Success</text>
+  <rect class="nm" x="305" y="12" width="14" height="14" rx="3"/><text class="m" x="325" y="24">Sponge not moved</text>
+  <rect class="ng" x="480" y="12" width="14" height="14" rx="3"/><text class="m" x="500" y="24">Sponge nudged, not carried</text>
+
+  <!-- scale: 18 px per trial, 30 trials = 540 px, starting at x = 200 -->
+  <text class="t" x="0" y="82">Base</text>
+  <rect class="ok" x="200" y="60" width="270" height="34" rx="4"/><text class="n" x="335" y="83">15</text>
+  <rect class="nm" x="470" y="60" width="216" height="34" rx="4"/><text class="n" x="578" y="83">12</text>
+  <rect class="ng" x="686" y="60" width="54" height="34" rx="4"/><text class="ngt" x="713" y="83">3</text>
+
+  <text class="t" x="0" y="138">DAgger, round 1</text>
+  <rect class="ok" x="200" y="116" width="342" height="34" rx="4"/><text class="n" x="371" y="139">19</text>
+  <rect class="nm" x="542" y="116" width="162" height="34" rx="4"/><text class="n" x="623" y="139">9</text>
+  <rect class="ng" x="704" y="116" width="36" height="34" rx="4"/><text class="ngt" x="722" y="139">2</text>
+
+  <text class="t" x="0" y="194">DAgger, round 2</text>
+  <rect class="ok" x="200" y="172" width="360" height="34" rx="4"/><text class="n" x="380" y="195">20</text>
+  <rect class="nm" x="560" y="172" width="144" height="34" rx="4"/><text class="n" x="632" y="195">8</text>
+  <rect class="ng" x="704" y="172" width="36" height="34" rx="4"/><text class="ngt" x="722" y="195">2</text>
+</svg>

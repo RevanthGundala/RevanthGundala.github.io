@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 785 265" width="100%" role="img" aria-label="Seed 1002 diagnostic split by far and near scenes across step-20000 batch-8, tail weight averaging SWA, and 90%-sim batch-32, alongside same-session real-only A2 baselines">
+  <style>
+    .t { font-family: inherit; fill: var(--text); font-size: 16px; }
+    .m { font-family: inherit; fill: var(--text-muted); font-size: 13px; }
+    .grid { stroke: var(--border); stroke-width: 1; }
+    .far { fill: #d97757; }
+    .near { fill: var(--accent); }
+    .tot { font-family: inherit; fill: var(--text); font-size: 14.5px; font-weight: 600; }
+    .lbl { font-family: inherit; fill: var(--text); font-size: 12.5px; }
+  </style>
+
+  <!-- legend -->
+  <rect class="far" x="230" y="10" width="13" height="13" rx="2.5"/>
+  <text class="m" x="249" y="21">Far reach (9 scenes)</text>
+  <rect class="near" x="405" y="10" width="13" height="13" rx="2.5"/>
+  <text class="m" x="424" y="21">Near reach (11 scenes)</text>
+  <text class="m" x="638" y="21">Overall (same-session A2)</text>
+
+  <!-- gridlines: x(p) = 230 + 3.8 * p -->
+  <g class="grid">
+    <line x1="230" y1="36" x2="230" y2="222"/>
+    <line x1="325" y1="36" x2="325" y2="222"/>
+    <line x1="420" y1="36" x2="420" y2="222"/>
+    <line x1="515" y1="36" x2="515" y2="222"/>
+    <line x1="610" y1="36" x2="610" y2="222"/>
+  </g>
+  <g class="m" text-anchor="middle">
+    <text x="230" y="246">0%</text>
+    <text x="325" y="246">25%</text>
+    <text x="420" y="246">50%</text>
+    <text x="515" y="246">75%</text>
+    <text x="610" y="246">100%</text>
+  </g>
+
+  <!-- Row 1: S1KS1002C (4/20: Far 3/9 = 33.3% -> 126.7px, Near 1/11 = 9.1% -> 34.5px; A2 = 9/20) -->
+  <text class="t" x="0" y="64">50% sim, step 20k</text>
+  <text class="m" x="0" y="83">batch 8, single snapshot</text>
+  <rect class="far" x="230" y="50" width="126.7" height="13" rx="2.5"/>
+  <text class="lbl" x="364" y="61">3/9</text>
+  <rect class="near" x="230" y="68" width="34.5" height="13" rx="2.5"/>
+  <text class="lbl" x="272" y="79">1/11</text>
+  <text class="tot" x="638" y="63">4/20 (20%)</text>
+  <text class="m" x="638" y="81">vs. 9/20 A2</text>
+
+  <!-- Row 2: S1KS1002C_AVG (9/20: Far 2/9 = 22.2% -> 84.4px, Near 7/11 = 63.6% -> 241.8px; A2_AVG = 10/20) -->
+  <text class="t" x="0" y="126">Averaged weights</text>
+  <text class="m" x="0" y="145">batch 8, avg 14k–20k</text>
+  <rect class="far" x="230" y="112" width="84.4" height="13" rx="2.5"/>
+  <text class="lbl" x="321" y="123">2/9</text>
+  <rect class="near" x="230" y="130" width="241.8" height="13" rx="2.5"/>
+  <text class="lbl" x="479" y="141">7/11</text>
+  <text class="tot" x="638" y="125">9/20 (45%)</text>
+  <text class="m" x="638" y="143">vs. 10/20 A2 avg</text>
+
+  <!-- Row 3: S1KA90S1002 (12/20: Far 6/9 = 66.7% -> 253.3px, Near 6/11 = 54.5% -> 207.3px; A2 = 8/20) -->
+  <text class="t" x="0" y="188">90% sim, batch 32</text>
+  <text class="m" x="0" y="207">step 20k, ~85% sim seen</text>
+  <rect class="far" x="230" y="174" width="253.3" height="13" rx="2.5"/>
+  <text class="lbl" x="490" y="185">6/9</text>
+  <rect class="near" x="230" y="192" width="207.3" height="13" rx="2.5"/>
+  <text class="lbl" x="444" y="203">6/11</text>
+  <text class="tot" x="638" y="187">12/20 (60%)</text>
+  <text class="m" x="638" y="205">vs. 8/20 A2</text>
+</svg>

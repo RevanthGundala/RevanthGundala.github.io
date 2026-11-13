@@ -1,0 +1,5 @@
+{{- $svg := .Page.Resources.GetMatch (.Get "src") -}}
+<figure class="svgfig">
+  {{ $svg.Content | safeHTML }}
+  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

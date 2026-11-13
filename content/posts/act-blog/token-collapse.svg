@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="100%" role="img" aria-label="Token effect for real advantage labels is under 1 percent of the observation effect, far below the 5 percent threshold, while a planted signal was learned: target 0.500, learned 0.519">
+  <style>
+    .t { font-family: inherit; fill: var(--text); font-size: 17px; }
+    .h { font-family: inherit; fill: var(--text); font-size: 18px; font-weight: 600; }
+    .m { font-family: inherit; fill: var(--text-muted); font-size: 14px; }
+    .grid { stroke: var(--border); stroke-width: 1; }
+    .thr { stroke: var(--text-muted); stroke-width: 1.5; stroke-dasharray: 6 5; }
+    .real { fill: var(--accent); }
+    .tiny { fill: #d97757; }
+    .ctl { fill: var(--text-muted); }
+    .got { fill: #6aa84f; }
+    .v { font-family: inherit; fill: var(--text); font-size: 14px; font-weight: 600; text-anchor: middle; }
+  </style>
+
+  <text class="h" x="0" y="22">Real advantage labels</text>
+  <text class="h" x="500" y="22">Planted-signal control</text>
+
+  <!-- left panel: 0-6%, y(v) = 240 - 30 * v -->
+  <g class="grid">
+    <line x1="40" y1="240" x2="440" y2="240"/>
+    <line x1="40" y1="180" x2="440" y2="180"/>
+    <line x1="40" y1="120" x2="440" y2="120"/>
+    <line x1="40" y1="60" x2="440" y2="60"/>
+  </g>
+  <line class="thr" x1="40" y1="90" x2="440" y2="90"/>
+  <text class="m" x="440" y="82" text-anchor="end">5% pass threshold</text>
+  <g class="m" text-anchor="end">
+    <text x="32" y="245">0%</text><text x="32" y="185">2%</text><text x="32" y="125">4%</text><text x="32" y="65">6%</text>
+  </g>
+  <rect class="real" x="58" y="212.1" width="70" height="27.9" rx="3"/>
+  <rect class="real" x="148" y="210.6" width="70" height="29.4" rx="3"/>
+  <rect class="real" x="238" y="211.2" width="70" height="28.8" rx="3"/>
+  <rect class="tiny" x="328" y="239.1" width="70" height="0.9" rx="0.5"/>
+  <text class="v" x="93" y="204">0.93%</text>
+  <text class="v" x="183" y="202">0.98%</text>
+  <text class="v" x="273" y="203">0.96%</text>
+  <text class="v" x="363" y="231">0.03%</text>
+  <g class="m" text-anchor="middle">
+    <text x="93" y="262">Parent</text>
+    <text x="183" y="262">Rollout +</text><text x="183" y="279">correction</text>
+    <text x="273" y="262">Rollout</text><text x="273" y="279">only</text>
+    <text x="363" y="262">Mix B</text>
+  </g>
+
+  <!-- right panel: 0-0.6, y(v) = 240 - 250 * v -->
+  <g class="grid">
+    <line x1="500" y1="240" x2="720" y2="240"/>
+    <line x1="500" y1="165" x2="720" y2="165"/>
+    <line x1="500" y1="90" x2="720" y2="90"/>
+  </g>
+  <g class="m" text-anchor="end">
+    <text x="492" y="245">0</text><text x="492" y="170">0.3</text><text x="492" y="95">0.6</text>
+  </g>
+  <rect class="ctl" x="520" y="115" width="70" height="125" rx="3"/>
+  <rect class="got" x="620" y="110.3" width="70" height="129.7" rx="3"/>
+  <text class="v" x="555" y="107">0.500</text>
+  <text class="v" x="655" y="102">0.519</text>
+  <g class="m" text-anchor="middle">
+    <text x="555" y="262">Planted</text><text x="555" y="279">target</text>
+    <text x="655" y="262">Learned</text><text x="655" y="279">effect</text>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+{{ $src := .Get "src" }}
+{{ $caption := .Get "caption" | default "" }}
+{{ $poster := .Get "poster" | default "" }}
+<figure>
+  <video controls playsinline preload="metadata" style="max-width:100%;height:auto;"{{ with $poster }} poster="{{ . }}"{{ end }}>
+    <source src="{{ $src }}" type="video/mp4">
+    Your browser does not support embedded video.
+  </video>
+  {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

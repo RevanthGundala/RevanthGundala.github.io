@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" width="100%" role="img" aria-label="Second iteration on the same 5 by 3 grid: parent 53% (8 of 15), adding 7 corrections 80% (12 of 15), adding 4 autonomous rollouts and 3 corrections 20% (3 of 15)">
+  <style>
+    .t { font-family: inherit; fill: var(--text); font-size: 17px; }
+    .m { font-family: inherit; fill: var(--text-muted); font-size: 14px; }
+    .grid { stroke: var(--border); stroke-width: 1; }
+    .ci { stroke-width: 3; stroke-linecap: round; }
+    .base { stroke: var(--text-muted); fill: var(--text-muted); }
+    .good { stroke: var(--accent); fill: var(--accent); }
+    .bad { stroke: #d97757; fill: #d97757; }
+    .dot { stroke: var(--bg); stroke-width: 3; }
+  </style>
+  <g class="grid">
+    <line x1="200" y1="25" x2="200" y2="180"/>
+    <line x1="330" y1="25" x2="330" y2="180"/>
+    <line x1="460" y1="25" x2="460" y2="180"/>
+    <line x1="590" y1="25" x2="590" y2="180"/>
+    <line x1="720" y1="25" x2="720" y2="180"/>
+  </g>
+  <g class="m" text-anchor="middle">
+    <text x="200" y="204">0%</text>
+    <text x="330" y="204">25%</text>
+    <text x="460" y="204">50%</text>
+    <text x="590" y="204">75%</text>
+    <text x="720" y="204">100%</text>
+  </g>
+
+  <text class="t" x="0" y="56">Parent</text>
+  <text class="m" x="0" y="76">mixed-data policy</text>
+  <line class="ci base" x1="356.5" y1="66" x2="591" y2="66"/>
+  <circle class="dot base" cx="477.2" cy="66" r="9"/>
+  <text class="t" x="477.2" y="46" text-anchor="middle">53% <tspan class="m">8/15</tspan></text>
+
+  <text class="t" x="0" y="111">Expert only</text>
+  <text class="m" x="0" y="131">+7 corrections</text>
+  <line class="ci good" x1="485" y1="121" x2="683.6" y2="121"/>
+  <circle class="dot good" cx="616" cy="121" r="9"/>
+  <text class="t" x="616" y="101" text-anchor="middle">80% <tspan class="m">12/15</tspan></text>
+
+  <text class="t" x="0" y="166">Mixed</text>
+  <text class="m" x="0" y="186">+4 auto, +3 corr.</text>
+  <line class="ci bad" x1="236.4" y1="176" x2="435" y2="176"/>
+  <circle class="dot bad" cx="304" cy="176" r="9"/>
+  <text class="t" x="304" y="156" text-anchor="middle">20% <tspan class="m">3/15</tspan></text>
+</svg>
