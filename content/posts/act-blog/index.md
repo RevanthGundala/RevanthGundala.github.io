@@ -39,7 +39,7 @@ Earlier sponge experiments showed that my dataset overrepresented one orientatio
 
 To improve the base policy, I used human-gated DAgger (HG-DAgger): the autonomous policy ran until it began to fail, at which point I intervened with the leader arm to steer out of mistakes and aggregated those correction episodes into the dataset ([Ross et al., 2011](https://arxiv.org/abs/1011.0686); [Kelly et al., 2019](https://arxiv.org/abs/1806.03960)). I collected 18 correction episodes, combined them with the original 48 demonstrations, and fine-tuned on all 66 episodes.
 
-{{< video src="dagger-takeover-continuous.mp4" poster="dagger-takeover-continuous.jpg" caption="An on-policy DAgger correction: the policy runs autonomously until I intervene around 8s with the leader arm to guide the grasp and placement on the trivet. (The physical handoff pause isn't captured because recording halts while the leader aligns.)" >}}
+{{< video src="dagger-takeover-continuous-r2.mp4" poster="dagger-takeover-continuous-r2.jpg" caption="An on-policy DAgger correction: the policy approaches autonomously, pauses while the leader arm aligns to the follower's pose, and I take over to guide the grasp and placement on the trivet." >}}
 
 
 ## Evaluation
@@ -68,9 +68,9 @@ Classifying trials by where the sponge started and finished in recorded video sh
 - **Every failure was a pick-up failure.** In 29 of the 36 failures the sponge never moved at all, and in the other 7 it was nudged slightly without being lifted. No failed trial ever reached the trivet.
 - **Targeted corrections worked where spent.** Round two eliminated misses on the two layouts it targeted (layouts 1 and 4), but failures remained on the layouts that didn't receive new corrections.
 
-Since failures happened at the grasp, future corrections needed to target the approach and grasp, not the carry or the placement. Standard imitation policies also struggle when an object slips, continuing along their trajectory in empty air. In an evaluation rollout, the fine-tuned policy successfully recovered after dropping the sponge shortly after lifting:
+Since failures happened at the grasp, future corrections needed to target the approach and grasp, not the carry or the placement. Standard imitation policies also struggle when the scene changes mid-trajectory, continuing along their memorized path in empty air. In a live perturbation test, the fine-tuned policy re-tracked the sponge after it was moved mid-rollout and completed the placement on the trivet:
 
-{{< video src="dagger-recovery.mp4" poster="dagger-recovery.jpg" caption="Recovering after a slip: when the sponge drops shortly after lifting, the policy retries the grasp autonomously and completes the placement on the trivet." >}}
+{{< video src="sponge-perturbation-recovery.mp4" poster="sponge-perturbation-recovery.jpg" caption="Closed-loop perturbation recovery: when the sponge is moved mid-rollout, the policy re-tracks the new location, grasps it, and completes the placement on the trivet." >}}
 
 
 ## Conclusion
