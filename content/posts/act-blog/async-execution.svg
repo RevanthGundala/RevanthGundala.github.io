@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" width="100%" role="img" aria-label="Asynchronous execution timeline showing background model inference running at 10 Hz while robot hardware executes at 30 Hz without pauses">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 785 225" width="100%" role="img" aria-label="Asynchronous execution timeline showing background model inference running at 10 Hz while robot hardware executes at 30 Hz without pauses">
   <style>
     .t { font-family: inherit; fill: var(--text); font-size: 15px; font-weight: 600; }
     .m { font-family: inherit; fill: var(--text-muted); font-size: 13px; }
