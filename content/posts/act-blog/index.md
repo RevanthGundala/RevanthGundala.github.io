@@ -5,7 +5,7 @@ date: 2026-08-21T09:16:45.000Z
 description: "Getting a custom ACT policy working on a low-cost arm, and measuring DAgger corrections under matched placements."
 ---
 
-*Code: [omx-act-recap](https://github.com/RevanthGundala/omx-act-recap) (policy & evaluation) · [omx-training](https://github.com/RevanthGundala/omx-training) (DAgger & robot control)*
+*Code: [omx-act](https://github.com/RevanthGundala/omx-act) (policy & evaluation) · [omx-training](https://github.com/RevanthGundala/omx-training) (DAgger & robot control)*
 
 I wanted a small, easy-to-modify imitation-learning policy that runs on low-cost hardware. This post covers how I got a custom ACT implementation working on a real robot arm (the 5-DOF [OpenMANIPULATOR-X](https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/)), and how I measured whether DAgger corrections actually helped.
 
