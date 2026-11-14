@@ -16,11 +16,12 @@ Getting a policy working on a physical robot is hard. I wanted a minimal ACT imp
 
 ### Simplifying the task
 
+<div class="media-row">
+{{< img src="pasta-training-demo.jpg" alt="Overhead view of a single piece of pasta beside a white bowl" caption="The single-piece pasta task from the overhead camera. I used this rotated camera orientation by accident, but kept it consistent across every episode. The pasta still occupied only a small part of the image, making it a poor target for visual localization." >}}
 {{< img src="setup.jpg" alt="Top-camera view of the OpenMANIPULATOR-X sponge task" caption="The final task setup: move the blue sponge onto the fixed trivet." >}}
+</div>
 
 I started by trying to place pasta into a bowl, but a single piece of pasta was small, low-contrast, and took up only a tiny fraction of the wide overhead camera. Cropping the camera down to the workspace likely would have resolved this, but rather than tuning camera crops, I simplified the setup instead: switching to a bright, large sponge and a fixed trivet. This isolated the sponge's position and orientation as the only variables so I could verify the policy architecture itself first.
-
-{{< img src="pasta-training-demo.jpg" alt="Overhead view of a single piece of pasta beside a white bowl" caption="The single-piece pasta task from the overhead camera. I used this rotated camera orientation by accident, but kept it consistent across every episode. The pasta still occupied only a small part of the image, making it a poor target for visual localization." >}}
 
 ### Running the policy asynchronously
 
